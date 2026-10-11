@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Good Web layout</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        padding: 0px;
+        margin: 0px;
+        font-family: "Montserrat";
+      }
+      body {
+        min-height: 100vh;
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        grid-template-rows: auto auto 1fr auto;
+        grid-template-areas:
+          "header header"
+          "nav nav"
+          "side main"
+          "footer footer";
+      }
+
+      header {
+        grid-area: header;
+        width: 100%;
+        height: 50vh;
+        background-color: blueviolet;
+
+        background-image: url("../ExampleImages/flowers.jpg");
+        background-position: top;
+        background-size: cover;
+      }
+      .overlay {
+        background-color: rgba(52, 52, 52, 0.5);
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: nowrap;
+        flex-direction: column;
+      }
+      .header-content {
+        text-align: center;
+        color: white;
+        font-size: 1.5rem;
+        text-shadow: 2px 2px 2px grey;
+      }
+      .header-content > * {
+        margin-top: 5px;
+      }
+      .header-content > button {
+        padding: 10px;
+        font-size: 1.2rem;
+        border: none;
+        border-radius: 5px;
+        box-shadow: 2px 2px 2px grey;
+      }
+      nav {
+        grid-area: nav;
+        width: 100%;
+        height: 50px;
+        background-color: rgb(104, 31, 93);
+        display: flex;
+        justify-content: left;
+      }
+
+      nav > ul {
+        display: flex;
+        margin: 0;
+        padding: 0;
+      }
+      nav li {
+        list-style: none;
+        padding: 10px;
+      }
+
+      nav li a {
+        color: white;
+        text-decoration: none;
+        padding: 10px;
+        font-size: 1.2rem;
+      }
+      aside {
+        grid-area: side;
+        background-color: rgb(233, 234, 231);
+      }
+      aside > img {
+        display: block;
+        width: 100%;
+        height: auto;
+        max-height: 350px;
+        object-fit: cover;
+      }
+
+      .about-me > * {
+        margin: 10px;
+      }
+      main {
+        grid-area: main;
+        min-width: 0;
+        /* lets the grid item shrink instead of growing to fit content */
+      }
+      .article-card {
+        background-color: rgba(181, 183, 178);
+        margin: 10px;
+        padding: 20px;
+        border-radius: 10px;
+      }
+      .article-card > * {
+        margin-top: 10px;
+      }
+      .article-image {
+        max-width: 80%;
+      }
+      .article-image > img {
+        display: block;
+        width: 100%;
+        height: auto;
+        max-height: 250px;
+        object-fit: cover;
+        object-position: top;
+      }
+
+      footer {
+        grid-area: footer;
+        height: 100px;
+        background-color: rgb(104, 31, 93);
+        text-align: center;
+      }
+      .small-thumb-gallery {
+        padding: 10px 0px 10px 0px;
+        width: 100%;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+      }
+      .small-thumb-item {
+        height: 100px;
+        width: 100%;
+        object-fit: cover;
+        margin-top: 5px;
+        object-position: center;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="overlay">
+        <div class="header-content">
+          <h1>Welcome!</h1>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+          <button>Click Here!</button>
+        </div>
+      </div>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </nav>
+    <aside>
+      <div class="about-me">
+        <div class="about-me-header">
+          <h2>About Me</h2>
+          <img
+            src="../ExampleImages/worman_profile.jpg"
+            alt="woman_profile"
+            height="200"
+            width="200"
+          />
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
+            qui quam asperiores!
+          </p>
+        </div>
+        <div class="more-about-me">
+          <h3>More About Me</h3>
+          <p>Lorem ipsum, dolor sit</p>
+          <div class="small-thumb-gallery">
+            <img
+              class="small-thumb-item"
+              src="../ExampleImages/Makeup.jpg"
+              alt="makeup"
+            />
+            <img
+              class="small-thumb-item"
+              src="../ExampleImages/musuem_view.jpg"
+              alt="museum"
+            />
+            <img
+              class="small-thumb-item"
+              src="../ExampleImages/skincare.jpg"
+              alt="skincare"
+            />
+          </div>
+        </div>
+      </div>
+    </aside>
+    <main>
+      <section class="article-card">
+        <div class="article-header">
+          <h1>Title Heading</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+        <div class="article-image">
+          <img src="../ExampleImages/redcandle.jpg" alt="makeup" />
+        </div>
+        <div class="article-desctription">
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit eius
+            ut dolorem reprehenderit veritatis. Quasi quia quas nulla fugit
+            exercitationem non dicta consequuntur sit facere. Vitae accusantium
+            iste voluptatem obcaecati.
+          </p>
+        </div>
+      </section>
+      <section class="article-card">
+        <div class="article-header">
+          <h1>Title Heading</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+        <div class="article-image">
+          <img src="../ExampleImages/redcandle.jpg" alt="makeup" />
+        </div>
+        <div class="article-desctription">
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit eius
+            ut dolorem reprehenderit veritatis. Quasi quia quas nulla fugit
+            exercitationem non dicta consequuntur sit facere. Vitae accusantium
+            iste voluptatem obcaecati.
+          </p>
+        </div>
+      </section>
+      <section class="article-card">
+        <div class="article-header">
+          <h1>Title Heading</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+        <div class="article-image">
+          <img src="../ExampleImages/redcandle.jpg" alt="makeup" />
+        </div>
+        <div class="article-desctription">
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit eius
+            ut dolorem reprehenderit veritatis. Quasi quia quas nulla fugit
+            exercitationem non dicta consequuntur sit facere. Vitae accusantium
+            iste voluptatem obcaecati.
+          </p>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <h2>Footer</h2>
+    </footer>
+  </body>
+</html>
