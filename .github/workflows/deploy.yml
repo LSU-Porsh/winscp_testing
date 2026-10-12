@@ -49,4 +49,4 @@ jobs:
           password: ${{ secrets.SFTP_PASSWORD }} # Your group's site password
           local_path: "./" # Local folder root
           remote_path: "/home/lsu-source-test/htdocs/test.lsu-source.org/" # Group web directory
-          args: "-o ConnectTimeout=30"
+          args: "-o ConnectTimeout=30 --exclude=.git --exclude=.github --exclude=.gitignore"
