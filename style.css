@@ -138,3 +138,10 @@ footer {
   margin-top: 5px;
   object-position: center;
 }
+
+.container {
+  border: 2px solid grey;
+  background-color: grey;
+  border-radius: 10px;
+  height: min-content;
+}
