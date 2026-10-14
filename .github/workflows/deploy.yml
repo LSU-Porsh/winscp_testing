@@ -9,7 +9,7 @@ on:
 jobs:
   # STEP 1: Continuous Integration (Test code on pushes and pull requests)
   validate-code:
-    runs-on: ubuntu-latest
+    runs-on: Ubuntu 26.04
     steps:
       - name: Checkout Code
         uses: actions/checkout@v5
@@ -49,4 +49,4 @@ jobs:
           password: ${{ secrets.SFTP_PASSWORD }} # Your group's site password
           local_path: "./" # Local folder root
           remote_path: "/home/lsu-source-test/htdocs/test.lsu-source.org/" # Group web directory
-          args: "-o ConnectTimeout=30"
+          args: "-o ConnectTimeout=30 --exclude=.git --exclude=.github --exclude=.gitignore"
